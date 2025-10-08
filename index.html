@@ -76,13 +76,19 @@
             </h1>
             <p class="lead my-4 text-muted">Tekst lalallala</p>
             <a href="#pricing" class="btn btn-secondary btn-lg">Buy now</a>
+            <!-- sidebar/canvas -->
+             <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
+              Explore my other books!!!
+             </a>
           </div>
           <div class="col-md-5 text-center d-none d-md-block">
+          <span class="tt" data-bs-placement="bottom" title="Netinija raamatuvärk">
             <img
               src="/assets/ebook-cover (1).png"
               class="img-fluid"
               alt="ebook"
             />
+          </span>
           </div>
         </div>
       </div>
@@ -404,6 +410,42 @@
                             <span class="input-group-text">
                                 <i class="bi bi-person-fill text secondary"></i>
                             </span>
+                            <input type="text" id="email" class="form-control" placeholder="e.g. mario@example.com">
+                            <span class="input-group-text">
+                              <span class="tt" data-bs-placement="bottom" title="Enter an email address we can reply to">
+                                <i class="bi bi-question-circle text-muted"></i>
+                              </span>  
+                            </span>
+                        </div>
+                        <label for="name" class="form-label">Name:</label>
+                        <div class="mb-4 input-group">
+                          <span class="input-group-text">
+                            <i class="bi bi-person-fill text-secondary"></i>
+                          </span>
+                          <input type="text" id="name" class="form-control" placeholder="e.g. Mario">
+                          <span class="input-group-text">
+                              <span class="tt" data-bs-placement="bottom" title="Pretty self explanatory">
+                                <i class="bi bi-question-circle text-muted"></i>
+                              </span>  
+                            </span>
+                        </div>
+                        <label for="subject" class="form-label">What is your question about?</label>
+                        <div class="mb-4 input-group">
+                          <span class="input-group-text">
+                            <i class="bi bi-chat-right-dots-fill text-secondary"></i>
+                          </span>
+                          <select class="form-select" id="subject">
+                            <option value="pricing" selected>Pricing query</option>
+                            <option value="content">Content query</option>
+                            <option value="other">Other query</option>
+                          </select>
+                        </div>
+                        <div class="mb-4 mt-5 form-floating">
+                          <textarea class="form-control" id="query" style="height: 140px;" placeholder="query"></textarea>
+                          <label for="query">Your query...</label>
+                        </div>
+                        <div class="mb-4 text-center">
+                          <button type="submit" class="btn btn-secondary"></button>
                         </div>
                     </form>
                 </div>
@@ -411,10 +453,81 @@
         </div>
       </section>
 
+      <!-- get updates/modal trigger -->
+<section class="bg-light">
+  <div class="container">
+    <div class="text-center">
+      <h2>Ole rõngas!</h2>
+      <p class="lead">Sa uudiseid!</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <p class="text-muted my-4">jutt jehhuuu</p>
+        <botton class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#reg-modal">
+        Registreeri, et saada uudiseid!
+        </botton>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+      <!-- modal itself -->
+<div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title">Saa viimaseid uudiseid!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+      </div>
+      <div class="modal-body">
+        <p>juttttttttttt</p>
+        <label for="modal-email" class="form-label">Su Email aadress</label>
+        <input type="email" class="form-control" id="modal-email" placeholder="e.g. mario@example.com">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary">Saada</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- offcanvas -->
+ <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="sidebar-label">Mu teised raamatud!!</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>jutuke jehheueueu</p>
+  
+
+<!-- droppdown -->
+ <div class="dropdown mt-3">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="book-dropdown" data-bs-toggle="dropdown">
+    Vali raamat!!!
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="book-dropdown">
+    <li><a href="#" class="dropdown-item">Muutu kangelaseks!</a></li>
+    <li><a class="dropdown-item">Valluta Munamägi!</a></li>
+    <li><a class="dropdown-item">Levelda oma oskusi!</a></li>
+  </ul>
+ </div>
+</div>
+ </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+    <script>
+          const tooltips = document.querySelectorAll('.tt')
+    tooltips.forEach(t => {
+      new bootstrap.Tooltip(t)
+      })
+    </script>
   </body>
 </html>
